@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>EduNavigator AI Summarizer</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">
+
+EduNavigator AI
+
+</div>
+
+<div class="navlinks">
+
+<span>NLP Summarizer</span>
+
+</div>
+
+</nav>
+
+
+<div class="hero">
+
+<h1>AI Document & YouTube Summarizer</h1>
+
+<p>
+Upload study material or lectures and generate smart summaries
+</p>
+
+</div>
+
+
+<div class="container">
+
+
+<div class="input-card">
+
+<h2>Input</h2>
+
+
+<div class="row">
+
+<select id="type" onchange="switchInput()">
+
+<option value="youtube">YouTube</option>
+
+<option value="file">Upload File</option>
+
+<option value="text">Raw Text</option>
+
+</select>
+
+
+<select id="model">
+
+<option value="t5-small">Fast Model</option>
+
+<option value="t5-base">Balanced Model</option>
+
+<option value="facebook/bart-large-cnn">
+
+High Quality Model
+
+</option>
+
+</select>
+
+</div>
+
+
+<div id="youtubeBox">
+
+<input
+
+id="youtube"
+
+placeholder="Paste YouTube URL"
+
+/>
+
+</div>
+
+
+<div id="fileBox" style="display:none;">
+
+<input
+
+type="file"
+
+id="file"
+
+accept=".pdf,.docx,.txt"
+
+/>
+
+</div>
+
+
+<div id="textBox" style="display:none;">
+
+<textarea
+
+id="text"
+
+placeholder="Paste study text"
+
+></textarea>
+
+</div>
+
+
+<button onclick="summarize()">
+
+Generate AI Summary
+
+</button>
+
+</div>
+
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<p>Generating summary...</p>
+
+</div>
+
+
+<div class="result-card">
+
+<h2>Summary Output</h2>
+
+
+<div class="stats">
+
+<span id="words"></span>
+
+<span id="modelused"></span>
+
+</div>
+
+
+<div id="output">
+
+Your summary will appear here
+
+</div>
+
+
+<div class="btnrow">
+
+<button id="download">
+
+Download
+
+</button>
+
+<button onclick="copySummary()">
+
+Copy
+
+</button>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<script src="/static/script.js"></script>
+
+</body>
+
+</html>
