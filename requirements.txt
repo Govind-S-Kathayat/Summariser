@@ -7,3 +7,4 @@ pymupdf
 youtube-transcript-api
 pytube
 gunicorn
+flask
