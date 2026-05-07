@@ -6,3 +6,4 @@ tqdm
 pymupdf
 youtube-transcript-api
 pytube
+gunicorn
